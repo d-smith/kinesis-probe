@@ -1,0 +1,13 @@
+service: elprobe
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'dev'}
+
+functions:
+  probe:
+    handler: probe.probe
+    environment:
+      ENDPOINT: https://www.google.com
+
